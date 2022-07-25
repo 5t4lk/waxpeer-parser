@@ -10,9 +10,11 @@ import (
 )
 
 const (
-	minPriceURL = "https://api.waxpeer.com/v1/prices?game=csgo&min_price="
-	maxPriceURL = "&max_price="
-	searchURL   = "&search="
+	minPriceURL     = "https://api.waxpeer.com/v1/prices?game=csgo&min_price="
+	maxPriceURL     = "&max_price="
+	searchURL       = "&search="
+	correctPriceURL = "000" // On "Waxpeer" prices are structured in this way: `0.01$ = 10; 0.1$ = 100; 1$ = 1000`.
+	// So for correct constructing link need to add "000" to user's price.
 )
 
 func Request(min, max, search string) ([]byte, error) {
@@ -39,7 +41,7 @@ func Get() ([]byte, error) {
 		return nil, err
 	}
 
-	byteJson, err := Request(minPrice, maxPrice, itemName)
+	byteJson, err := Request(minPrice+correctPriceURL, maxPrice+correctPriceURL, itemName)
 	if err != nil {
 		return nil, err
 	}
