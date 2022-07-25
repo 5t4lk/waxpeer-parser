@@ -1,12 +1,37 @@
-package client
+package waxpeer
 
 import (
-	"444/internal/apis"
 	"444/internal/entities"
 	"444/internal/special_item"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
 )
+
+const (
+	minPriceURL = "https://api.waxpeer.com/v1/prices?game=csgo&min_price="
+	maxPriceURL = "&max_price="
+	searchURL   = "&search="
+)
+
+func Request(min, max, search string) ([]byte, error) {
+	reqURL := minPriceURL + min + maxPriceURL + max + searchURL + search
+
+	r, err := http.Get(reqURL)
+	if err != nil {
+		return nil, err
+	}
+
+	defer r.Body.Close()
+
+	byteInfo, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	return byteInfo, nil
+}
 
 func Get() ([]byte, error) {
 	minPrice, maxPrice, itemName, err := special_item.ItemInfo()
@@ -14,7 +39,7 @@ func Get() ([]byte, error) {
 		return nil, err
 	}
 
-	byteJson, err := apis.Request(minPrice, maxPrice, itemName)
+	byteJson, err := Request(minPrice, maxPrice, itemName)
 	if err != nil {
 		return nil, err
 	}

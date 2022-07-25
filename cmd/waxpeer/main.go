@@ -1,18 +1,18 @@
 package main
 
 import (
-	"444/internal/client"
+	"444/internal/apis/waxpeer"
 	"fmt"
 	"log"
 )
 
 func main() {
-	getJson, err := client.Get()
+	getJson, err := waxpeer.Get()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	items, err := client.OrderedOutput(getJson)
+	items, err := waxpeer.OrderedOutput(getJson)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,3 +21,4 @@ func main() {
 		fmt.Printf("GUN: %s\nPRICE: %d\n", v.Name, v.Min)
 	}
 }
+g
