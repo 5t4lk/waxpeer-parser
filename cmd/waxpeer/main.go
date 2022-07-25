@@ -17,8 +17,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for _, v := range items {
-		fmt.Printf("GUN: %s\nPRICE: %d\n", v.Name, v.Min)
+	for k, v := range items {
+		var price float64 = float64(items[k].Min)
+		var itemPrice = price / 1000.00
+
+		fmt.Printf("GUN: %s\nPRICE: %.2f$\n", v.Name, itemPrice)
 	}
 }
-g
