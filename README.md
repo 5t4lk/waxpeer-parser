@@ -1,3 +1,5 @@
+# Project objective
+> The aim of the project is to earn money, which is based on the instant purchase of skins with a lucrative offer. The project is currently in a low priority stage of development.
 # Installation
 > git clone https://github.com/5t4lk/waxpeer-parser
 # How to run?
