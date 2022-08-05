@@ -40,29 +40,29 @@ func Filter() error {
 					if diffMarketPrice >= 0.8 && diffMarketPrice <= 1.2 {
 						if strings.Contains(v.Name, "Souvenir") {
 							if diffPriceWaxpeer <= 0.3 {
-								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, diffPriceWaxpeer*100)
+								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, 100-(diffPriceWaxpeer*100))
 							}
 							break
 						}
 						if strings.Contains(v.Name, "★ StatTrak™") {
 							if diffPriceWaxpeer <= 0.3 {
-								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, diffPriceWaxpeer*100)
+								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, 100-(diffPriceWaxpeer*100))
 							}
 							break
 						}
 						if strings.Contains(v.Name, "Doppler") {
 							if diffPriceWaxpeer <= 0.3 {
-								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, diffPriceWaxpeer*100)
+								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, 100-(diffPriceWaxpeer*100))
 							}
 							break
 						}
 						if strings.Contains(v.Name, "Sticker") {
 							if diffPriceWaxpeer <= 0.3 {
-								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, diffPriceWaxpeer*100)
+								fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, 100-(diffPriceWaxpeer*100))
 							}
 							break
 						}
-						fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, diffPriceWaxpeer*100)
+						fmt.Printf("%s : %.2f : %.2f : %.1f%%\n", v.Name, vPriceWax, vSteamPrice, 100-(diffPriceWaxpeer*100))
 					}
 				}
 			}
