@@ -11,7 +11,7 @@ const (
 	getRequestURL = "https://api.waxpeer.com/v1/prices?game=csgo&minified=steam_price"
 )
 
-func GetRequest() ([]byte, error) {
+func GetWXRequest() ([]byte, error) {
 	r, err := http.Get(getRequestURL)
 	if err != nil {
 		return nil, err

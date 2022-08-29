@@ -7,7 +7,8 @@ import (
 
 func main() {
 	for {
-		if err := filters.Filter(); err != nil {
+		err := filters.Filter()
+		if err != nil {
 			log.Fatal(err)
 		}
 	}

@@ -11,7 +11,7 @@ const (
 	BPRequestURL = "http://csgobackpack.net/api/GetItemsList/v2/"
 )
 
-func BPRequest() ([]byte, error) {
+func GetBPRequest() ([]byte, error) {
 	r, err := http.Get(BPRequestURL)
 	if err != nil {
 		return nil, err

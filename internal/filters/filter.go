@@ -8,17 +8,17 @@ import (
 )
 
 func Filter() error {
-	getByteJsonWX, err := waxpeer.GetRequest()
+	getByteJsonWX, err := waxpeer.GetWXRequest()
 	if err != nil {
 		return err
 	}
 
-	getWX, err := waxpeer.GetOrderedOutput(getByteJsonWX)
+	GetWX, err := waxpeer.GetOrderedOutput(getByteJsonWX)
 	if err != nil {
 		return err
 	}
 
-	getByteJsonBP, err := csgobackpack.BPRequest()
+	getByteJsonBP, err := csgobackpack.GetBPRequest()
 	if err != nil {
 		return err
 	}
@@ -28,12 +28,12 @@ func Filter() error {
 		return err
 	}
 
-	for _, v := range getWX {
+	for _, v := range GetWX {
 		vSteamPrice := float64(v.SteamPrice) / 1000.00
 		vPriceWax := float64(v.Min) / 1000.00
 
 		diffPriceWaxpeer := vPriceWax / vSteamPrice
-		if diffPriceWaxpeer <= 0.8 {
+		if diffPriceWaxpeer <= 0.6 {
 			for _, v2 := range getBP.ItemsList {
 				if v.Name == v2.Name {
 					diffMarketPrice := vSteamPrice / v2.Price.The30_Days.Median
