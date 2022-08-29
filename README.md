@@ -14,4 +14,4 @@ http://csgobackpack.net;
 http://csgobackpack.net/api/
 ```
 
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀![alt text](https://waxpeer.com/img/waxpeer.gif)
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀![alt text](https://waxpeer.com/android-chrome-192x192.png)
